@@ -1,4 +1,3 @@
-# Databricks notebook source
 # check if spark context is defined
 print(sc.version)
 
@@ -72,7 +71,6 @@ max_iterations = 10
 lda = LDA(k=num_topics, maxIter=max_iterations)
 # lda_model = lda.fit(tf_idf_df[['index','features']].rdd.map(list))
 
-
 model = lda.fit(tf_idf_df)
 
 ll = model.logLikelihood(tf_idf_df)
@@ -89,10 +87,8 @@ topics.show(truncate=False)
 # transformed = model.transform(tf_idf_df)
 # transformed.show(truncate=False)
 
-
 wordNumbers = 5
 topicIndices = model.describeTopics(maxTermsPerTopic=wordNumbers)
-
 
 def topic_render(topic):
     terms = topic[0]
@@ -101,7 +97,6 @@ def topic_render(topic):
         term = vocabArray[terms[i]]
         result.append(term)
     return result
-
 
 topicos = topicIndices.select('topic').collect()
 # print(topicos)
@@ -114,7 +109,3 @@ for topic in range(len(topicos)):
     print(topic_render(tindices[topic]))
     '''for term in tindices[topic]:
         print(term)'''
-
-
-
-
