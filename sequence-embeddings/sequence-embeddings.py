@@ -21,8 +21,7 @@ from sklearn import metrics
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt % matplotlib
-inline
+import matplotlib.pyplot as plt % matplotlib inline
 
 # others
 import pandas as pd
@@ -34,9 +33,9 @@ from random import sample
 import time
 
 
-!pip
+'''!pip
 install
-gensim
+gensim'''
 
 from gensim.models.doc2vec import LabeledSentence
 from gensim.models import Doc2Vec
